@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --darkM-txt: white;
+    --whiteM-txt: black;
+    --whiteM-bg-primary:#F4F4F6;
+    --darkM-bg-primary:#28282B;
+    --whiteM-bg-secondary: #E9E9EC;
+    --darkM-bg-secondary:#303033;
+    
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+body {
+    color: var(--darkM-txt);
+    display: flex;
+}
+
+nav {
+    background-color: var(--darkM-bg-secondary);
+    width: 20%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.app-name {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.app-name img {
+    width: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo-name {
+    font-weight: 700;
+}
+
+.notes-nav-cont, .todo-nav-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.notes-nav-cont > p, .todo-nav-cont > p {
+    font-size: 13px;
+}
+
+.notes-list, .todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings-cont, .todo-item, .note-item, .search-cont {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings-cont {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1%;
+}
+
+main {
+    background-color: var(--darkM-bg-primary);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 3%;
+}
+
+main h1 {
+    font-size: 3rem;
+}
+
+.display-type {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.list-grid-cont {
+    background-color: var(--darkM-bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    border-radius: 14px;
+    min-width: 100px;
+    padding: 10px;
+}
+
+.spacer-div {
+    border: 1px solid var(--whiteM-bg-primary);
+    height: 70%;
+}
+
+.add-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 1% 1% 0;
+}
