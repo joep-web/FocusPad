@@ -27,4 +27,73 @@ body {
     color: var(--darkM-txt);
     display: flex;
     background-color: var(--darkM-bg-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+}
+
+img {
+    border-radius: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+    gap: 3%;
+}
+
+input {
+    border: none;
+    border-radius: 7px;
+    background-color: var(--whiteM-bg-secondary);
+    color: var(--darkM-bg-primary);
+    padding: 10px;
+    height: 3rem;
+}
+
+h1 {
+    margin-bottom: 2%;
+}
+
+.fullname {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.fullname input {
+    width: 50%;
+}
+
+.submit-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+  border: none;
+  width: 30%;
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--whiteM-txt);
+  margin-top: 2%;
+  transition: all 0.3s ease;
+}
+
+button a {
+    text-decoration: none;
+    color: var(--whiteM-txt);
+}
+
+button:hover {
+    transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+span a {
+    color: var(--whiteM-bg-primary);
 }
