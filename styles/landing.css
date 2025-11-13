@@ -116,7 +116,7 @@ body {
   height: 100%;
   background-image: 
     linear-gradient(to right, #28282B 0%, rgba(40, 40, 43, 0) 100%),
-    url("src/img/landing/2207.jpg");
+    url("../src/img/landing/landing-img.jpg");
   background-repeat: no-repeat, repeat; 
   background-size: cover, 200px 200px; 
   background-position: left, center;   

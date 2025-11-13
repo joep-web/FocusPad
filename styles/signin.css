@@ -46,12 +46,13 @@ form {
 }
 
 input {
-    border: none;
+    border: 3px solid;
     border-radius: 7px;
     background-color: var(--whiteM-bg-secondary);
     color: var(--darkM-bg-primary);
     padding: 10px;
     height: 3rem;
+    transition: all 0.3s ease;
 }
 
 h1 {
@@ -91,9 +92,46 @@ button a {
 
 button:hover {
     transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 span a {
     color: var(--whiteM-bg-primary);
+}
+
+.eight-chars {
+    color: gray;
+}
+
+input:hover {
+  border-color: #FF6B81; 
+  outline: none;
+}
+
+input:focus {
+  border-color: #A78BFA; 
+  box-shadow: 0 0 5px rgba(167, 139, 250, 0.5);
+  outline: none;
+}
+
+input.valid {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+input.invalid {
+  border-color: #E74C3C;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.4);
+}
+
+#pw-hint {
+  font-size: 0.9rem;
+  color: #F39C12;
+  margin-top: 4px;
+}
+
+#pw-match {
+  font-size: 0.9rem;
+  color: #4CAF50;
+  margin-top: 4px;
 }
