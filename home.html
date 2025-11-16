@@ -17,7 +17,7 @@
 
         <div class="search-cont">
             <img src="src\img\search-dark.svg" alt="search icon" width="30px" height="30px">
-            <p class="search-txt">Search</p>
+            <input type="text" name="search" class="search-txt" placeholder="Search">
         </div>
 
         <div class="notes-nav-cont">
@@ -30,20 +30,6 @@
                 <div class="note-item">
                     <img src="src\img\notes-dark.svg" width="30px" height="30px" alt="note-icon">
                     <p>Note 2</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="todo-nav-cont">
-            <p>To-Do</p>
-            <div class="todo-list">
-                <div class="todo-item">
-                    <img src="src\img\todo-dark.svg" width="30px" height="30px" alt="todo-icon">
-                    <p>To-do 1</p>
-                </div>
-                <div class="todo-item">
-                    <img src="src\img\todo-dark.svg" width="30px" height="30px" alt="todo-icon">
-                    <p>To-do 2</p>
                 </div>
             </div>
         </div>
@@ -64,15 +50,54 @@
             </div>
         </div>
 
-        <div class="cont-for-notes">
-            <div class="block">
-                <h4>Title</h4>
+        <div class="cont-for-notes ">
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <div>
+                    <p class="project-display">Project</p>
+                    <p class="due-display">Due on...</p>
+                </div> 
                 <p>description</p>
             </div>
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>
+            <div class="block grid-style-block">
+                <h2>Title</h2>
+                <p>description</p>
+            </div>v
         </div>
 
         <img src="src\img\add-dark.svg" alt="add new" width="75px" height="75px" class="add-btn">
     </main>
-    <script src="script.js"></script>
+
+    <div class="opened-block">
+                <input type="text" placeholder="Title" name="title" class="block-title" >
+                <div class="cont-for-extras">
+                    <input type="text" placeholder="Tags" name="tags" class="tags">
+                    <input type="text" placeholder="Project" name="project" class="project">
+                    <input type="date" placeholder="Due Date" name="due-date" class="due-date">
+                </div>
+                <textarea name="description" placeholder="description"  name="description" class="description"></textarea>
+                <div class="buttons">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="save-btn">Save</button>
+                </div>
+    </div>
+
+    <script type="module" src="js\app.js"></script>
 </body>
 </html>
