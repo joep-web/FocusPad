@@ -7,7 +7,7 @@ const password = document.querySelector("#pass");
 const confirmPassword = document.querySelector("#confPass");
 const pwHint = document.querySelector("#pw-hint");
 const pwMatch = document.querySelector("#pw-match");
-const submitBtn = document.querySelector(".submit-btn");
+const submitBtn = document.querySelector(".submit-btn button");
 
 email.addEventListener("input", () => {
   validateInput(email, email.value.match(emailRegex));
@@ -69,8 +69,10 @@ submitBtn.addEventListener("click", (e) => {
   validateInput(Fname, Fname.value.trim() !== "");
   validateInput(Lname, Lname.value.trim() !== "");
 
+  e.preventDefault()
 
   if (isValid) {
+    window.location.href = "../home.html"
     form.reset();
     inputs.forEach(input => input.classList.remove("valid"));
   }
