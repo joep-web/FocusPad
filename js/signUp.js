@@ -48,7 +48,6 @@ function checkPasswordMatch() {
 const form = document.querySelector("form");
 
 submitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
 
   let isValid = true;
 

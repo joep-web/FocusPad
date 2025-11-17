@@ -130,13 +130,13 @@ main h1 {
     align-items: center;
     gap: 9px;
     border-radius: 14px;
-    min-width: 100px;
-    padding: 10px;
 }
 
 .list-grid-cont img {
+    height: 40px;
+    width: 40px;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     border-radius: 7px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -202,8 +202,7 @@ main h1 {
 }
 
 .cont-for-notes .block:hover {
-    transform: scale(1.01) !important;
-    border-color: #a36bd1;
+    transform: scale(1.05) !important;
     box-shadow: 0 4px 12px rgba(107, 155, 209, 0.2);
 }
 
@@ -252,11 +251,34 @@ main h1 {
 
 .cont-for-extras input {
     font-style: italic;
-    border: 1px solid var(--whiteM-bg-primary);
-    border-radius: 50px;
+    border-radius: 15px;
     width: 155px;
-    background-color: var(--whiteM-bg-primary);
-    color: var(--darkM-bg-primary);
+    background-color: white;
+}
+
+.cont-for-extras .tags {
+    color: rgb(156, 107, 209);
+    border: 1px solid rgb(156, 107, 209);
+}
+
+.cont-for-extras .due-date {
+    color: rgb(209, 107, 107);
+    border: 1px solid rgb(209, 107, 107);
+}
+.cont-for-extras .project {
+    color: rgb(107, 155, 209);
+    border: 1px solid rgb(107, 155, 209);
+}
+
+.cont-for-extras .tags::placeholder {
+    color: rgb(104, 29, 184);
+}
+
+.cont-for-extras .due-date::placeholder {
+    color: rgb(209, 107, 107);
+}
+.cont-for-extras .project::placeholder {
+    color: rgb(9, 55, 107);
 }
 
 .cont-for-extras input::placeholder {
@@ -355,3 +377,4 @@ main h1 {
 ::-webkit-scrollbar-thumb:hover {
     background: #4A4A4F;
 }
+

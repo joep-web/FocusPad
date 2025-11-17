@@ -7,6 +7,7 @@ const notesList = document.querySelector('.notes-list');
 const searchInput = document.querySelector('.search-txt');
 const gridBtn = document.querySelector('.grid-btn');
 const listBtn = document.querySelector('.list-btn');
+const settings = document.querySelector(".settings-cont")
 
 // State
 let currentEditId = null;
@@ -373,4 +374,188 @@ function filterTasks(query) {
     const noteItem = createNoteItem(task);
     notesList.appendChild(noteItem);
   });
+}
+
+
+// Add this to your app.js file
+
+// Settings Menu functionality
+const settingsCont = document.querySelector('.settings-cont');
+let settingsMenu = null;
+let logoutConfirm = null;
+
+// Event: Open settings menu
+settingsCont.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (settingsMenu) {
+    closeSettingsMenu();
+  } else {
+    openSettingsMenu();
+  }
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (settingsMenu && !settingsMenu.contains(e.target) && !settingsCont.contains(e.target)) {
+    closeSettingsMenu();
+  }
+});
+
+function openSettingsMenu() {
+  settingsMenu = document.createElement('div');
+  settingsMenu.className = 'settings-menu';
+  settingsMenu.style.cssText = `
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 10px;
+    background-color: #28282B;
+    border: 1px solid #F4F4F6;
+    border-radius: 10px;
+    min-width: 190px;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  `;
+
+  settingsMenu.innerHTML = `
+    <a href="about.html" class="settings-menu-item" style="
+      display: block;
+      padding: 12px 15px;
+      color: #F4F4F6;
+      text-decoration: none;
+      border-radius: 7px;
+      transition: background-color 0.2s ease;
+      margin-bottom: 5px;
+    ">About Us</a>
+    <div class="settings-menu-item logout-item" style="
+      padding: 12px 15px;
+      color: #F4F4F6;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    ">Log Out</div>
+  `;
+
+  settingsCont.appendChild(settingsMenu);
+
+  // Animate in
+  setTimeout(() => {
+    settingsMenu.style.opacity = '1';
+    settingsMenu.style.transform = 'translateY(0)';
+  }, 10);
+
+  // Add hover effects
+  const menuItems = settingsMenu.querySelectorAll('.settings-menu-item');
+  menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.backgroundColor = '#3A3A3F';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.backgroundColor = 'transparent';
+    });
+  });
+
+  // Log out click
+  settingsMenu.querySelector('.logout-item').addEventListener('click', () => {
+    showLogoutConfirm();
+  });
+}
+
+function closeSettingsMenu() {
+  if (settingsMenu) {
+    settingsMenu.style.opacity = '0';
+    settingsMenu.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      settingsMenu.remove();
+      settingsMenu = null;
+    }, 300);
+  }
+}
+
+function showLogoutConfirm() {
+  closeSettingsMenu();
+  
+  logoutConfirm = document.createElement('div');
+  logoutConfirm.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: #28282B;
+    border: 1px solid #F4F4F6;
+    border-radius: 13px;
+    padding: 30px;
+    min-width: 400px;
+    z-index: 1001;
+    opacity: 0;
+    transition: all 0.3s ease;
+  `;
+
+  logoutConfirm.innerHTML = `
+    <h3 style="margin-bottom: 15px; color: white; font-size: 1.5rem;">Log Out?</h3>
+    <p style="margin-bottom: 25px; color: #F4F4F6;">Are you sure you want to log out?</p>
+    <div style="display: flex; gap: 15px; justify-content: flex-end;">
+      <button class="cancel-logout-btn" style="
+        padding: 10px 25px;
+        border: 1px solid #F4F4F6;
+        background-color: inherit;
+        color: #F4F4F6;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      ">Cancel</button>
+      <button class="confirm-logout-btn" style="
+        padding: 10px 25px;
+        border: none;
+        background-color: #D16B6B;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      ">Log Out</button>
+    </div>
+  `;
+
+  document.body.appendChild(logoutConfirm);
+
+  // Animate in
+  setTimeout(() => {
+    logoutConfirm.style.opacity = '1';
+    logoutConfirm.style.transform = 'translate(-50%, -50%) scale(1)';
+  }, 10);
+
+  // Event listeners
+  logoutConfirm.querySelector('.cancel-logout-btn').addEventListener('click', () => {
+    closeLogoutConfirm();
+  });
+
+  logoutConfirm.querySelector('.confirm-logout-btn').addEventListener('click', () => {
+    // Add your logout logic here (redirect to login page, clear session, etc.)
+    window.location.href = '../index.html'; // Change to your login page
+  });
+
+  // Hover effects
+  const buttons = logoutConfirm.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transform = 'scale(1.05)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'scale(1)';
+    });
+  });
+}
+
+function closeLogoutConfirm() {
+  if (logoutConfirm) {
+    logoutConfirm.style.opacity = '0';
+    logoutConfirm.style.transform = 'translate(-50%, -50%) scale(0.9)';
+    setTimeout(() => {
+      logoutConfirm.remove();
+      logoutConfirm = null;
+    }, 300);
+  }
 }

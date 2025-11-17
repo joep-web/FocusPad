@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FocusPad</title>
+    <link rel="stylesheet" href="styles/about.css">
+</head>
+<body>
+    <div class="back-btn">
+        <div>
+            <img src="src/img/back-arrow.svg" alt="back" width="30px" height="30px">
+        </div>
+    </div>
+
+    <div class="about-container">
+        <h1>About Us</h1>
+        
+        <div class="team-container">
+            <div class="team-member">
+                <img src="src/img/team/joeprey.jpg" alt="Joeprey Dangkulos" class="member-photo">
+                <h2>Joeprey Dangkulos</h2>
+                <p class="member-title">Developer</p>
+            </div>
+
+            <div class="team-member">
+                <img src="src/img/team/edsel.png" alt="Edsel Carballo" class="member-photo">
+                <h2>Edsel Carballo</h2>
+                <p class="member-title">Research</p>
+            </div>
+
+            <div class="team-member">
+                <img src="src/img/team/pauleen.jpeg" alt="Pauleen Cruz" class="member-photo">
+                <h2>Pauleen Cruz</h2>
+                <p class="member-title">Design</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const back = document.querySelector(".back-btn")
+        back.addEventListener("click", () => {
+            window.history.back();
+        })
+    </script>
+</body>
+</html>
